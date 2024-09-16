@@ -1,0 +1,58 @@
+
+"""
+General Fields
+id: The unique identifier of the file.
+name: The name of the file.
+mimeType: The MIME type of the file (e.g., Google Docs, PDF, etc.).
+createdTime: The creation time of the file.
+modifiedTime: The last modified time of the file.
+webViewLink: A link for opening the file in a browser.
+webContentLink: A link for downloading the content of the file directly.
+size: The size of the file in bytes.
+description: The description of the file (if any).
+owners: A list of owners of the file (includes the owner’s email and display name).
+permissions: The file’s sharing permissions, such as whether it is shared publicly or privately.
+shared: Whether the file is shared.
+trashed: Whether the file is in the trash.
+parents: The folder IDs of the parent folders containing the file.
+viewedByMeTime: The last time the user viewed the file.
+
+
+
+Google Workspace File Types (Google Docs, Sheets, Slides, etc.)
+Google Docs: application/vnd.google-apps.document
+Google Sheets: application/vnd.google-apps.spreadsheet
+Google Slides: application/vnd.google-apps.presentation
+Google Forms: application/vnd.google-apps.form
+Google Drawings: application/vnd.google-apps.drawing
+Google Sites: application/vnd.google-apps.site
+Google Apps Scripts: application/vnd.google-apps.script
+Google Jamboard: application/vnd.google-apps.jam
+Other Google Drive File Types
+Google Drive Folder: application/vnd.google-apps.folder
+Google Drive Shortcut: application/vnd.google-apps.shortcut
+Generic File Types (for non-Google files stored in Drive)
+PDF: application/pdf
+Microsoft Word: application/vnd.openxmlformats-officedocument.wordprocessingml.document (for .docx)
+Microsoft Excel: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet (for .xlsx)
+Microsoft PowerPoint: application/vnd.openxmlformats-officedocument.presentationml.presentation (for .pptx)
+Plain Text: text/plain
+CSV: text/csv
+HTML: text/html
+JPEG Image: image/jpeg
+PNG Image: image/png
+GIF Image: image/gif
+MP4 Video: video/mp4
+MP3 Audio: audio/mpeg
+ZIP Archive: application/zip
+JSON: application/json
+EPUB (eBooks): application/epub+zip
+Complete Google Drive MIME Type List (Generic MIME Types)
+You can also search for any file type by specifying a general MIME type, such as:
+
+All files: application/*
+All text files: text/*
+All images: image/*
+All audio files: audio/*
+All video files: video/*
+"""
