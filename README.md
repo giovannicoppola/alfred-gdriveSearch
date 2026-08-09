@@ -41,6 +41,7 @@ src="https://img.shields.io/github/downloads/giovannicoppola/alfred-gdriveSearch
 2. (optional) set a hotkey
 
 # Changelog
+- 2026-07-21: version 0.1.1, escape apostrophes/backslashes in search terms, handle an empty file-type filter, config robustness
 - 2024-09-16: first release (version 0.1)
 
 # Thanks

@@ -4,7 +4,7 @@ import os
 import sys
 
 
-CREDENTIALS_PATH = os.path.expanduser(os.getenv('KEYFILE'))
+CREDENTIALS_PATH = os.path.expanduser(os.getenv('KEYFILE', ''))
 
 
 
@@ -23,13 +23,13 @@ iconDict = {
 
 
 def createMIMEquery():
-    GDOC_CHECK = os.path.expanduser(os.getenv('GDOC_CHECK'))
-    GSHEET_CHECK = os.path.expanduser(os.getenv('GSHEET_CHECK'))
-    GPRES_CHECK = os.path.expanduser(os.getenv('GPRES_CHECK'))
-    PDF_CHECK = os.path.expanduser(os.getenv('PDF_CHECK'))
-    MSWORD_CHECK = os.path.expanduser(os.getenv('MSWORD_CHECK'))
-    MSEXCEL_CHECK = os.path.expanduser(os.getenv('MSEXCEL_CHECK'))
-    JPG_CHECK = os.path.expanduser(os.getenv('JPG_CHECK'))
+    GDOC_CHECK = os.getenv('GDOC_CHECK')
+    GSHEET_CHECK = os.getenv('GSHEET_CHECK')
+    GPRES_CHECK = os.getenv('GPRES_CHECK')
+    PDF_CHECK = os.getenv('PDF_CHECK')
+    MSWORD_CHECK = os.getenv('MSWORD_CHECK')
+    MSEXCEL_CHECK = os.getenv('MSEXCEL_CHECK')
+    JPG_CHECK = os.getenv('JPG_CHECK')
 
 
     

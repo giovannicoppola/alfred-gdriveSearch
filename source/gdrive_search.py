@@ -17,18 +17,27 @@ MY_INPUT = sys.argv[1]
     
 
 
+# Escape the characters that are special inside a Google Drive query string literal
+def escapeDriveTerm(term):
+    return term.replace("\\", "\\\\").replace("'", "\\'")
+
+
 # Function to search for text in Google Drive documents
 def search_text_in_drive(search_string, resultObj):
     mime_type_query = createMIMEquery()
-    # Split the search string into individual terms
-    search_terms = [term.strip() for term in search_string.split(" ")]
-    
-    # Construct the search terms section outside the f-string
-    search_terms_query = " and ".join([f"fullText contains '{term}'" for term in search_terms])
+    # Split into individual terms, dropping empties (collapses repeated whitespace)
+    search_terms = [term for term in search_string.split() if term]
 
-    # Construct the query to search for all terms (AND logic)
-    query = f"({search_terms_query}) and ({mime_type_query})"
-    
+    # Construct the search terms section outside the f-string (escaped for the query)
+    search_terms_query = " and ".join([f"fullText contains '{escapeDriveTerm(term)}'" for term in search_terms])
+
+    # Construct the query to search for all terms (AND logic); only constrain by MIME
+    # type if the user has enabled at least one file type
+    if mime_type_query:
+        query = f"({search_terms_query}) and ({mime_type_query})"
+    else:
+        query = f"({search_terms_query})"
+
 
     results = drive_service.files().list(q=query, fields="files(id, name,webViewLink,mimeType)").execute()
     items = results.get('files', [])
